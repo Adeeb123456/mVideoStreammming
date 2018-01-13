@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">mVideoStreammming</string>
+    <string name="continu">Continue</string>
+    <string name="pls_try_again">try again</string>
+    <string name="success">success</string>
+    <string name="fail">fail</string>
+</resources>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="isSuccess"
+            type="boolean" />
+
+        <variable
+            name="message"
+            type="String" />
+
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/outline_gold_bg"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:padding="8dp"
+                    android:text="@{isSuccess ? @string/success : @string/fail}"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="32sp"
+             />
+
+                <TextView
+                    android:id="@+id/tvMsg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:gravity="center"
+                    android:text="@{message}"
+                    android:textColor="@color/colorTextOther"
+                    android:textSize="@dimen/def.txt.size"
+                    />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:orientation="horizontal">
+
+
+                    <Button
+                        android:id="@+id/btnButton"
+                        style="?android:textAppearanceMedium"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/btn_bg"
+                        android:stateListAnimator="@null"
+                        android:text="@{isSuccess ?@string/continu : @string/pls_try_again}"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+
+                        tools:targetApi="lollipop" />
+
+                    <LinearLayout
+                        android:id="@+id/laytLogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <Button
+                            android:id="@+id/btnSkip"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/btn_bg"
+                            android:stateListAnimator="@null"
+                            android:text="cancel"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+
+                            tools:targetApi="lollipop" />
+
+                        <View
+                            android:layout_width="16dp"
+                            android:layout_height="match_parent" />
+
+                        <Button
+                            android:id="@+id/btnOk"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/btn_bg"
+                            android:stateListAnimator="@null"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+
+                            tools:targetApi="lollipop" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</layout>

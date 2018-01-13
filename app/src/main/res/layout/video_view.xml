@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="isBuffering"
+            type="boolean" />
+
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/darker_gray"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/laytVideo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+            <VideoView
+                android:id="@+id/vvPlayer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/laytToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/include"
+                layout="@layout/common_toolbar" />
+
+        </LinearLayout>
+
+
+        <ImageButton
+            android:id="@+id/ibRefresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:contentDescription="hjjj"
+            android:src="@drawable/ic_replay"
+            android:visibility="gone" />
+
+
+        <com.mvideostreammming.mvideostreammming.widgets.ProgressWheel
+            android:id="@+id/loader"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:visibility="@{isBuffering ? View.VISIBLE : View.GONE }"
+            app:matProg_barColor="@color/colorPrimary"
+            app:matProg_progressIndeterminate="true" />
+
+    </RelativeLayout>
+
+
+</layout>
